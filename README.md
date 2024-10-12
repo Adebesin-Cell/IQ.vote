@@ -43,8 +43,8 @@ IQ.vote is the official voting system for IQ.wiki, allowing employees to vote fo
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/EveripediaNetwork/iq-vote.git
-cd iq-vote
+git clone https://github.com/Adebesin-Cell/IQ.vote.git
+cd IQ.vote
 ```
 
 2. Install dependencies:
