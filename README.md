@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# IQ.vote - Employee of the Month Voting System
+
+IQ.vote is the official voting system for IQ.wiki, allowing employees to vote for their peers to determine the Employee of the Month. The system is built using Next.js and TypeScript, with a backend that calculates and displays the top-voted employees. This README provides an overview of the project structure and its key features.
+
+## Features
+
+- **Admin Panel**: Only designated admins can access the admin panel. Admins can whitelist users, allowing only whitelisted employees to participate in the voting.
+  
+- **User Registration**: Users can sign up but cannot vote until they are whitelisted by an admin.
+  
+- **Voting System**:
+  - Each employee can cast 3 votes.
+  - 1st vote = 5 points.
+  - 2nd vote = 3 points.
+  - 3rd vote = 2 points.
+  - Users will select employees to vote for using dropdown menus on the frontend.
+
+- **Vote Calculation**: The backend calculates the top 3 employees based on points from all votes submitted and displays the results in the admin panel.
+
+- **Vote Submission**: Votes are submitted in real-time and counted immediately after submission.
+
+## Tech Stack
+
+- **Frontend**: Next.js with TypeScript.
+- **Backend**: TBD.
+  
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── public          # Static assets
+├── src
+│   ├── components  # Reusable UI components
+│   ├── pages       # Next.js pages for landing, voting, and admin panel
+│   ├── styles      # CSS and styling
+│   └── utils       # Utility functions
+└── README.md       # This README file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/Adebesin-Cell/IQ.vote.git
+cd IQ.vote
+```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm run dev
+```
 
-## Deploy on Vercel
+4. Open `http://localhost:3000` to view the application in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Use
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Admin Panel**: Only accessible to admins. Whitelist employees to allow them to vote.
+2. **Voting**: Once whitelisted, employees can cast their votes for the Employee of the Month by selecting peers from the dropdown menus.
+3. **Results**: Admins can view the top 3 employees based on accumulated points in the admin panel.
+
+## Contributing
+
+We welcome contributions! Please open a pull request or issue if you'd like to help improve the project.
+
+## License
+
+This project is licensed under the MIT License.
