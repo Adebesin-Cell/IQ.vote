@@ -19,7 +19,9 @@ export default async function Navbar() {
   const { address } = await getAuth();
 
   const isLoggedIn = !!address;
-  const isAdmin = adminWhitelist.includes(address as string);
+  const isAdmin = adminWhitelist
+    .map((admin) => admin.toLowerCase())
+    .includes(address?.toLowerCase() as string);
   const user = { name: 'John Doe', email: 'john@example.com' };
 
   return (
