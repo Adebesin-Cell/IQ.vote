@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import '@rainbow-me/rainbowkit/styles.css';
 import './globals.css';
-import Navbar from './_components/navbar';
+import { ClientProviders } from '@/components/client-providers';
+import Navbar from '../components/shared/navbar';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -29,10 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className='min-h-screen flex flex-col'>
-          <Navbar />
-          <main className='flex-grow'>{children}</main>
-        </div>
+        <ClientProviders>
+          <div className='min-h-screen flex flex-col'>
+            <Navbar />
+            <main className='flex-grow'>{children}</main>
+          </div>
+        </ClientProviders>
       </body>
     </html>
   );
